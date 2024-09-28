@@ -17,3 +17,8 @@
 #     artifact-name: corne_left_with_logging
 #
 ---
+include:
+  - board: nrf52840_m2
+    shield: something_cornish_left
+  - board: nrf52840_m2
+    shield: something_cornish_right

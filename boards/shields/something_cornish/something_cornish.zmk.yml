@@ -1,0 +1,13 @@
+file_format: "1"
+id: something_cornish
+name: Something Cornish
+type: shield
+url: https://github.com/CapMousse/something-cornish
+requires: [nrf52840_m2]
+exposes: [i2c_oled]
+features:
+  - keys
+  - backlight
+siblings:
+  - something_cornish_left
+  - something_cornish_right
