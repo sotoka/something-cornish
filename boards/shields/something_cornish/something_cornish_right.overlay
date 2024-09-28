@@ -1,4 +1,4 @@
-#include "corneish_zen.dtsi"
+#include "something_cornish.dtsi"
 #include <dt-bindings/led/led.h>
 
 
