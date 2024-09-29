@@ -6,6 +6,9 @@
     model = "Something Cornis";
 
     chosen {
+        zephyr,code-partition = &code_partition;
+        zephyr,sram = &sram0;
+        zephyr,flash = &flash0;
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
         zmk,physical-layout = &default_layout;
@@ -109,4 +112,24 @@
     };
 
 
+};
+
+&adc {
+    status = "okay";
+};
+
+&gpiote {
+    status = "okay";
+};
+
+&gpio0 {
+    status = "okay";
+};
+
+&gpio1 {
+    status = "okay";
+};
+
+&usbd {
+    status = "okay";
 };

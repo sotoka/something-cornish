@@ -3,7 +3,6 @@
 
 /{
     chosen {
-        zmk,battery = &vbatt;
         zmk,underglow = &led_strip;
     };
 
@@ -13,11 +12,6 @@
         control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
         init-delay-ms = <50>;
     };
-
-    vbatt: vbatt {
-        compatible = "zmk,battery-nrf-vddh";
-    };
-
 };
 
 &kscan0 {
