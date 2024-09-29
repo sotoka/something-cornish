@@ -1,6 +1,6 @@
 file_format: "1"
 id: something_cornish
-name: Something Cornish
+name: Cornish
 type: shield
 url: https://github.com/CapMousse/something-cornish
 requires: [nrf52840_m2]
