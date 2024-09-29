@@ -1,7 +1,7 @@
 if SHIELD_SOMETHING_CORNISH_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Something Cornish"
+    default "Cornish"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
