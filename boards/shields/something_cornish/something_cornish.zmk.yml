@@ -4,10 +4,9 @@ name: Something Cornish
 type: shield
 url: https://github.com/CapMousse/something-cornish
 requires: [nrf52840_m2]
-exposes: [i2c_oled]
 features:
   - keys
-  - backlight
+  - underglow
 siblings:
   - something_cornish_left
   - something_cornish_right
