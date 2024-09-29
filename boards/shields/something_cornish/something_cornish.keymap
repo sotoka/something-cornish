@@ -121,10 +121,10 @@
         system {
             display-name = "system";
             bindings = <
-&bootloader  &trans        &trans        &trans        &trans        &out OUT_TOG    &ext_power EP_TOG  &trans           &trans           &trans           &trans           &bootloader
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_OFF    &rgb_ug RGB_ON   &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI
-&trans       &trans        &trans        &trans        &trans        &studio_unlock  &rgb_ug RGB_EFF    &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD
-                                         &trans        &trans        &trans          &trans             &trans           &trans
+&bootloader  &trans        &trans        &trans        &trans        &out OUT_TOG    &ext_power EP_ON   &ext_power EP_OFF   &trans           &trans           &trans           &bootloader
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_OFF    &rgb_ug RGB_ON      &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI
+&trans       &trans        &trans        &trans        &trans        &studio_unlock  &rgb_ug RGB_EFF    &rgb_ug RGB_EFR     &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD
+                                         &trans        &trans        &trans          &trans             &trans              &trans
             >;
         };
     };
