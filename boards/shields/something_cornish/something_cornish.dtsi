@@ -2,7 +2,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    model = "Something Cornis";
+    model = "Something Cornish";
 
     chosen {
         zmk,kscan = &kscan0;
@@ -105,6 +105,4 @@
             , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
-
-
 };
