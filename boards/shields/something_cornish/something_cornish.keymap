@@ -18,21 +18,6 @@
 };
 
 / {
-    chosen {
-        zmk,physical-layout = &foostan_corne_6col_layout;
-    };
-};
-
-/ {
-    behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD0";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -40,6 +25,7 @@
             bindings = <&kp CLCK>;
             key-positions = <16 19>;
             layers = <0>;
+            slow-release;
         };
 
         gotosys {
@@ -51,6 +37,7 @@
         gaming-mode {
             bindings = <&tog 1>;
             key-positions = <0 11>;
+            slow-release;
         };
     };
 
