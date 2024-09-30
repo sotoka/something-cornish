@@ -58,14 +58,12 @@
         compatible = "zmk,keymap";
 
         home {
-            display-name = "QWERTY";
-
+            display-name = "Default";
             // --------------------------------------------------------------------------------
-            // |      |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |      |
-            // |      |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   | 
-            // |      |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |      |
-            //                    | TAB | BCK | SPC |   | ENT | ESC  | DEL |
-
+            // |   |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |      |
+            // | ` |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   | 
+            // |   |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |      |
+            //                 | ESC | SPC | TAB |   | ENT | BAK  | DEL |
             bindings = <
 &trans     &kp Q           &kp W           &kp E        &kp R        &kp T        &kp Y        &kp U            &kp I        &kp O           &kp P          &trans
 &kp GRAVE  &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G        &kp H        &mt LSHFT J      &mt LCTRL K  &mt LEFT_ALT L  &mt RWIN SEMI  &kp SQT
@@ -75,7 +73,12 @@
         };
 
         gaming {
-            display-name = "QWERTY";
+            display-name = "Gaming";
+            // --------------------------------------------------------------------------------
+            // |   |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |      |
+            // | ` |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   | 
+            // |   |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |      |
+            //                 | ESC | SPC | TAB |   | ENT | BAK  | DEL |
             bindings = <
 &kp LALT   &kp Q  &kp W  &kp E       &kp R      &kp T      &trans  &trans  &trans  &trans  &trans  &trans
 &kp LSHFT  &kp A  &kp S  &kp D       &kp F      &kp G      &trans  &trans  &trans  &trans  &trans  &trans
@@ -85,14 +88,13 @@
         };
 
         symbol {
-            display-name = "SYMBOL";
+            display-name = "Symbols";
 
             // -----------------------------------------------------------------------------------------
-            // |   |   |   |   |   | ` | ! | ( | ) | $ |   |   |
-            // |   |   |   |   |   | \ | @ | [ | ] | % |   |   |
-            // |   |   |   |   |   | * | # | { | } | ^ |   |   |
-            //         |   |   |   | = | - |   |
-
+            // |   | 1 | 2 | 3 | 4 | 9 |  | 0 | 5 | 6 | 7 | 8 |   |
+            // |   |   |   | + | - | [ |  | ] | \ |   |   |   |   |
+            // |   |   |   | = | _ | { |  | } | | |   |   |   |   |
+            //             |   |   |   |  |   |   |   |
             bindings = <
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp NUMBER_4           &kp N9              &kp N0             &kp N5               &kp NUMBER_6  &kp N7  &kp N8  &trans
 &trans  &trans        &trans        &mt LCTRL PLUS  &mt LSHFT KP_SUBTRACT  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &mt LSHFT BACKSLASH  &trans        &trans  &trans  &trans
@@ -105,11 +107,10 @@
             display-name = "fn";
 
             // -----------------------------------------------------------------------------------------
-            // |   | F1 | F2  | F3  | F4  |   |   |   |   |   |   |   |
-            // |   | F5 | F6  | F7  | F8  |   |   |   |   |   |   |   |
-            // |   | F9 | F10 | F11 | F12 |   |   |   |   |   |   |   |
-            //                |     |     |   |   |   |   |
-
+            // | F1 | F2  |  F3  |  F4  |  F5  |  F6  |  |  F7  |  F8  |  F9  |  F10  | F11 | F12 |
+            // |    | INS | HOME | END  | P_UP | P_DW |  | LEFT | DOWN |  UP  | RIGHT |     |     |
+            // |    |     |      | PREV | P_P  | NEXT |  | V_UP | V_MT | V_DW |       |     |     |
+            //                   |      |      |      |  |      |      |      |
             bindings = <
 &kp F1  &kp F2   &kp F3    &kp F4      &kp F5            &kp F6           &kp F7           &kp F8          &kp F9             &kp F10    &kp F11  &kp F12
 &trans  &kp INS  &kp HOME  &kp END     &kp PAGE_UP       &kp PAGE_DOWN    &kp LEFT         &kp DOWN_ARROW  &kp UP_ARROW       &kp RIGHT  &trans   &trans
@@ -120,10 +121,16 @@
 
         system {
             display-name = "system";
+
+            // -----------------------------------------------------------------------------------------
+            // | boot   |     |     |     |     | out_tog |  | ep_tog  |         |          |         |         | boot    |
+            // | bt_clr | bt0 | bt1 | bt2 | bt3 | bt4     |  | rgb_tog | rgb_eff | rgb_bri  | rgb_spi | rgb_hui | rgb_sai |
+            // |        |     |     |     |     | NEXT    |  |         | rgb_efr | rgb_brd  | rgb_spd | rgb_hub | rgb_sad |
+            //                      |     |     |         |  |         |         |          |
             bindings = <
-&bootloader  &trans        &trans        &trans        &trans        &out OUT_TOG    &ext_power EP_ON   &ext_power EP_OFF   &trans           &trans           &trans           &bootloader
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_OFF    &rgb_ug RGB_ON      &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI
-&trans       &trans        &trans        &trans        &trans        &studio_unlock  &rgb_ug RGB_EFF    &rgb_ug RGB_EFR     &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD
+&bootloader  &trans        &trans        &trans        &trans        &out OUT_TOG    &ext_power EP_TOG   &rgb_ug RGB_TOG   &trans           &trans           &trans           &bootloader
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans    &rgb_ug RGB_EFF      &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI
+&trans       &trans        &trans        &trans        &trans        &studio_unlock  &trans    &rgb_ug RGB_EFR     &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD
                                          &trans        &trans        &trans          &trans             &trans              &trans
             >;
         };
