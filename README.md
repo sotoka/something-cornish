@@ -9,6 +9,7 @@ As the main source code for corn-ish zen is now merged into ZMK, it's time for a
 ## Features
 
 - [x] Up to date ZMK integration
+- [x] Use official template
 - [x] Custom shield
 - [x] Working underglow
 - [x] New physical layout support
