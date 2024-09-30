@@ -19,7 +19,7 @@
 
 / {
     chosen {
-        zmk,physical-layout = &default_layout;
+        zmk,physical-layout = &foostan_corne_6col_layout;
     };
 };
 
