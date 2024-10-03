@@ -53,7 +53,7 @@
             //                 | ESC | SPC | TAB |   | ENT | BSPC | DEL |
             bindings = <
 &trans     &kp Q           &kp C           &kp O        &kp P        &kp W        &kp J        &kp M            &kp D        &kp EXCL        &kp Y          &trans
-&kp SEMI   &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL E  &mt LSHFT N  &kp T        &kp L        &mt LSHFT R      &mt LCTRL T  &mt LEFT_ALT I  &mt RWIN U     &kp SQT
+&kp SEMI   &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL E  &mt LSHFT N  &kp F        &kp L        &mt LSHFT R      &mt LCTRL T  &mt LEFT_ALT I  &mt RWIN U     &kp SQT
 &kp GRAVE  &kp Z           &kp X           &kp FSLH     &kp V        &kp B        &kp DOT      &kp H            &kp G        &kp COMMA       &kp K       &trans
                                            &kp ESC      &lt 2 SPACE  &lt 3 TAB    &lt 3 ENTER  &lt 2 BACKSPACE  &kp DEL
             >;
