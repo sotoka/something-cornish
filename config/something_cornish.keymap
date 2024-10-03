@@ -1,0 +1,125 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
+
+&mt {
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <150>;
+    flavor = "balanced";
+};
+
+&lt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <150>;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        capslock {
+            bindings = <&kp CLCK>;
+            key-positions = <16 19>;
+            layers = <0>;
+            slow-release;
+        };
+
+        gotosys {
+            bindings = <&mo 4>;
+            key-positions = <36 41>;
+            slow-release;
+        };
+
+        gaming-mode {
+            bindings = <&tog 1>;
+            key-positions = <0 11>;
+            slow-release;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        home {
+            display-name = "Default";
+            // --------------------------------------------------------------------------------
+            // |   |  Q  |  C  |  O  |  P  |  W  |   |  J  |   M  |  D  |  !  |  Y  |   |
+            // | ; |  A  |  S  |  E  |  N  |  T  |   |  L  |   R  |  T  |  I  |  U  | " | 
+            // | ` |  Z  |  X  |  /  |  V  |  B  |   |  .  |   H  |  G  |  ,  |  K  |   |
+            //                 | ESC | SPC | TAB |   | ENT | BSPC | DEL |
+            bindings = <
+&trans     &kp Q           &kp C           &kp O        &kp P        &kp W        &kp J        &kp M            &kp D        &kp EXCL        &kp Y          &trans
+&kp SEMI   &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL E  &mt LSHFT N  &kp T        &kp L        &mt LSHFT R      &mt LCTRL T  &mt LEFT_ALT I  &mt RWIN U     &kp SQT
+&kp GRAVE  &kp Z           &kp X           &kp FSLH     &kp V        &kp B        &kp DOT      &kp H            &kp G        &kp COMMA       &kp K       &trans
+                                           &kp ESC      &lt 2 SPACE  &lt 3 TAB    &lt 3 ENTER  &lt 2 BACKSPACE  &kp DEL
+            >;
+        };
+
+        gaming {
+            display-name = "Gaming";
+            // --------------------------------------------------------------------------------
+            // |   |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |      |
+            // | ` |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   | 
+            // |   |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |      |
+            //                 | ESC | SPC | TAB |   | ENT | BAK  | DEL |
+            bindings = <
+&kp LALT   &kp Q  &kp W  &kp E       &kp R      &kp T      &trans  &trans  &trans  &trans  &trans  &trans
+&kp LSHFT  &kp A  &kp S  &kp D       &kp F      &kp G      &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL  &kp Z  &kp X  &kp C       &kp V      &kp B      &trans  &trans  &trans  &trans  &trans  &trans
+                         &kp ESCAPE  &kp SPACE  &kp TAB    &trans  &trans  &trans
+            >;
+        };
+
+        symbol {
+            display-name = "Symbols";
+
+            // -----------------------------------------------------------------------------------------
+            // |  |  | 1 | 2 | 3 | + |  | ( | ) | @ | % | * |   |
+            // |  |  | 4 | 5 | 6 | - |  | [ | ] | ^ | | | _ |   |
+            // |  |  | 7 | 8 | 9 | = |  | { | } | $ | & | \ |   |
+            //           |   | 0 |   |  |   |   |   |
+            bindings = <
+&trans  &trans  &kp NUMBER_1        &kp NUMBER_2        &kp NUMBER_3        &kp PLUS        &kp LPAR    &kp RPAR                &kp AT              &kp PRCNT       &kp ASTRK       &trans
+&trans  &trans  &mt LALT NUMBER_4   &mt LCTRL NUMBER_5  &mt LSHFT NUMBER_6  &kp MINUS       &kp LBKT    &mt LSHFT RBKT &trans   &mt LCTRL CARET     &mt LALT PIPE   &mt LWIN UNDER  &trans
+&trans  &trans  &kp NUMBER_7        &kp NUMBER_8        &kp NUMBER_9        &kp EQUAL       &kp LBRC    &kp RBRC                &kp DLLR            &kp AMPS        &kp BSLH        &trans
+                                    &trans              &kp NUMBER_0        &trans          &trans      &trans                  &trans
+            >;
+        };
+
+        fn {
+            display-name = "fn";
+
+            // -----------------------------------------------------------------------------------------
+            // | F1 | F2  |  F3  |  F4  |  F5  |  F6  |  |  F7  |  F8  |  F9  |  F10  | F11 | F12 |
+            // |    | INS | HOME | END  | P_UP | P_DW |  | LEFT | DOWN |  UP  | RIGHT |     |     |
+            // |    |     |      | PREV | P_P  | NEXT |  | V_UP | V_MT | V_DW |       |     |     |
+            //                   |      |      |      |  |      |      |      |
+            bindings = <
+&kp F1  &kp F2   &kp F3    &kp F4      &kp F5            &kp F6           &kp F7           &kp F8          &kp F9             &kp F10    &kp F11  &kp F12
+&trans  &kp INS  &kp HOME  &kp END     &kp PAGE_UP       &kp PAGE_DOWN    &kp LEFT         &kp DOWN_ARROW  &kp UP_ARROW       &kp RIGHT  &trans   &trans
+&trans  &trans   &trans    &kp K_PREV  &kp K_PLAY_PAUSE  &kp K_NEXT       &kp K_VOLUME_UP  &kp K_MUTE      &kp K_VOLUME_DOWN  &trans     &trans   &trans
+                           &trans      &trans            &trans           &trans           &trans          &trans
+            >;
+        };
+
+        system {
+            display-name = "system";
+
+            // -----------------------------------------------------------------------------------------
+            // | boot   |     |     |     |     | out_tog |  | ep_tog  |         |          |         |         | boot    |
+            // | bt_clr | bt0 | bt1 | bt2 | bt3 | bt4     |  | rgb_tog | rgb_eff | rgb_bri  | rgb_spi | rgb_hui | rgb_sai |
+            // |        |     |     |     |     | NEXT    |  |         | rgb_efr | rgb_brd  | rgb_spd | rgb_hub | rgb_sad |
+            //                      |     |     |         |  |         |         |          |
+            bindings = <
+&bootloader  &trans        &trans        &trans        &trans        &out OUT_TOG    &ext_power EP_TOG   &rgb_ug RGB_TOG   &trans           &trans           &trans           &bootloader
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans    &rgb_ug RGB_EFF      &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI
+&trans       &trans        &trans        &trans        &trans        &studio_unlock  &trans    &rgb_ug RGB_EFR     &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD
+                                         &trans        &trans        &trans          &trans             &trans              &trans
+            >;
+        };
+    };
+};
