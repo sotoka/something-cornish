@@ -6,15 +6,15 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &mt {
-    tapping-term-ms = <280>;
-    require-prior-idle-ms = <150>;
-    flavor = "balanced";
+    tapping-term-ms = <175>;
+    quick-tap-ms = <175>;
+    flavor = "tap-preferred";
 };
 
 &lt {
     flavor = "tap-preferred";
-    tapping-term-ms = <280>;
-    require-prior-idle-ms = <150>;
+    tapping-term-ms = <175>;
+    quick-tap-ms = <175>;
 };
 
 / {
@@ -78,15 +78,15 @@
             display-name = "Symbols";
 
             // -----------------------------------------------------------------------------------------
-            // |   | 1 | 2 | 3 | 4 | 9 |  | 0 | 5 | 6 | 7 | 8 |   |
-            // |   |   |   | + | - | [ |  | ] | \ |   |   |   |   |
-            // |   |   |   | = | _ | { |  | } | | |   |   |   |   |
-            //             |   |   |   |  |   |   |   |
+            // |  |  | 1 | 2 | 3 | + |  | ( | ) | @ | % | * |   |
+            // |  |  | 4 | 5 | 6 | - |  | [ | ] | ^ | | | _ |   |
+            // |  |  | 7 | 8 | 9 | = |  | { | } | $ | & | \ |   |
+            //           |   | 0 |   |  |   | ! |   |
             bindings = <
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp NUMBER_4           &kp N9              &kp N0             &kp N5               &kp NUMBER_6  &kp N7  &kp N8  &trans
-&trans  &trans        &trans        &mt LCTRL PLUS  &mt LSHFT KP_SUBTRACT  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &mt LSHFT BACKSLASH  &trans        &trans  &trans  &trans
-&trans  &trans        &trans        &kp EQUAL       &kp UNDER              &kp LEFT_BRACE      &kp RIGHT_BRACE    &kp PIPE             &trans        &trans  &trans  &trans
-                                    &trans          &trans                 &trans              &kp EQUAL          &kp MINUS            &trans
+&trans  &trans  &kp NUMBER_1        &kp NUMBER_2        &kp NUMBER_3        &kp PLUS        &kp LPAR    &kp RPAR                &kp AT              &kp PRCNT       &kp ASTRK       &trans
+&trans  &trans  &mt LALT NUMBER_4   &mt LCTRL NUMBER_5  &mt LSHFT NUMBER_6  &kp MINUS       &kp LBKT    &mt LSHFT RBKT          &mt LCTRL CARET     &mt LALT PIPE   &mt LWIN UNDER  &trans
+&trans  &trans  &kp NUMBER_7        &kp NUMBER_8        &kp NUMBER_9        &kp EQUAL       &kp LBRC    &kp RBRC                &kp DLLR            &kp AMPS        &kp BSLH        &trans
+                                    &trans              &kp NUMBER_0        &trans          &trans      &kp EXCL                &trans
             >;
         };
 
@@ -99,9 +99,9 @@
             // |    |     |      | PREV | P_P  | NEXT |  | V_UP | V_MT | V_DW |       |     |     |
             //                   |      |      |      |  |      |      |      |
             bindings = <
-&kp F1  &kp F2   &kp F3    &kp F4      &kp F5            &kp F6           &kp F7           &kp F8          &kp F9             &kp F10    &kp F11  &kp F12
-&trans  &kp INS  &kp HOME  &kp END     &kp PAGE_UP       &kp PAGE_DOWN    &kp LEFT         &kp DOWN_ARROW  &kp UP_ARROW       &kp RIGHT  &trans   &trans
-&trans  &trans   &trans    &kp K_PREV  &kp K_PLAY_PAUSE  &kp K_NEXT       &kp K_VOLUME_UP  &kp K_MUTE      &kp K_VOLUME_DOWN  &trans     &trans   &trans
+&kp F1  &kp F2   &kp F3    &kp F4      &kp F5            &kp F6           &kp F7           &kp F8          &kp F9             &kp F10           &kp F11     &kp F12
+&trans  &kp INS  &kp HOME  &kp END     &kp PAGE_UP       &kp PAGE_DOWN    &kp LEFT         &kp DOWN_ARROW  &kp UP_ARROW       &kp RIGHT         &trans      &trans
+&trans  &trans   &trans    &kp K_PREV  &kp K_PLAY_PAUSE  &kp K_NEXT       &kp K_VOLUME_UP  &kp K_MUTE      &kp K_VOLUME_DOWN  &trans            &trans      &trans
                            &trans      &trans            &trans           &trans           &trans          &trans
             >;
         };
