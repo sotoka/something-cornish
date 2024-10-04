@@ -81,12 +81,12 @@
             // |  |  | 1 | 2 | 3 | + |  | ( | ) | @ | % | * |   |
             // |  |  | 4 | 5 | 6 | - |  | [ | ] | ^ | | | _ |   |
             // |  |  | 7 | 8 | 9 | = |  | { | } | $ | & | \ |   |
-            //           |   | 0 |   |  |   |   |   |
+            //           |   | 0 |   |  |   | ! |   |
             bindings = <
 &trans  &trans  &kp NUMBER_1        &kp NUMBER_2        &kp NUMBER_3        &kp PLUS        &kp LPAR    &kp RPAR                &kp AT              &kp PRCNT       &kp ASTRK       &trans
 &trans  &trans  &mt LALT NUMBER_4   &mt LCTRL NUMBER_5  &mt LSHFT NUMBER_6  &kp MINUS       &kp LBKT    &mt LSHFT RBKT          &mt LCTRL CARET     &mt LALT PIPE   &mt LWIN UNDER  &trans
 &trans  &trans  &kp NUMBER_7        &kp NUMBER_8        &kp NUMBER_9        &kp EQUAL       &kp LBRC    &kp RBRC                &kp DLLR            &kp AMPS        &kp BSLH        &trans
-                                    &trans              &kp NUMBER_0        &trans          &trans      &trans                  &trans
+                                    &trans              &kp NUMBER_0        &trans          &trans      &kp EXCL                &trans
             >;
         };
 
