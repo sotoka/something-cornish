@@ -56,7 +56,14 @@
         zmk,kscan = &kscan0;
         zmk,physical-layout = &foostan_corne_5col_layout;
         zephyr,display = &epd;
+        zmk,battery = &vbatt;
         zmk,underglow = &led_strip;
+    };
+    vbatt: vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        io-channels = <&adc 0>;
+        output-ohms = <1960000>;
+        full-ohms = <(1960000 + 810000)>;
     };
 
     default_transform: keymap_transform_0 {
