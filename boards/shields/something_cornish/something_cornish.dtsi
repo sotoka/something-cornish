@@ -56,6 +56,7 @@
         zmk,kscan = &kscan0;
         zmk,physical-layout = &foostan_corne_5col_layout;
         zephyr,display = &epd;
+        zmk,underglow = &led_strip;
     };
 
     default_transform: keymap_transform_0 {
