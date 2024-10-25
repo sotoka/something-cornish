@@ -1,5 +1,5 @@
-config SHIELD_SOMETHING_CORNISH_LEFT
-  def_bool $(shields_list_contains,something_cornish_left)
+config BOARD_CORNEISH_ZEN_LEFT
+    bool
 
-config SHIELD_SOMETHING_CORNISH_RIGHT
-  def_bool $(shields_list_contains,something_cornish_right)
+config BOARD_CORNEISH_ZEN_RIGHT
+    bool
