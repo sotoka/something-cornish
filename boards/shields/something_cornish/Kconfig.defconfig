@@ -1,42 +1,29 @@
-if SHIELD_SOMETHING_CORNISH_LEFT
+#
+# Copyright (c) 2022 Darryl deHaan
+# SPDX-License-Identifier: MIT
+#
+
+if BOARD_CORNEISH_ZEN_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Cornish"
+    default "Corne-ish Zen"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-endif
+endif # BOARD_CORNEISH_ZEN_LEFT
 
 
-if SHIELD_SOMETHING_CORNISH_LEFT || SHIELD_SOMETHING_CORNISH_RIGHT
+if BOARD_CORNEISH_ZEN_LEFT || BOARD_CORNEISH_ZEN_RIGHT
+
+config BOARD
+    default "corneish_zen"
 
 config ZMK_SPLIT
     default y
 
 config BT_CTLR
     default BT
-
-config ZMK_EXT_POWER
-    default y
-
-config WS2812_STRIP
-    default y
-
-config ZMK_RGB_UNDERGLOW
-    default y
-
-config ZMK_RGB_UNDERGLOW_ON_START
-    default n
-
-config ZMK_RGB_UNDERGLOW_BRT_MAX
-    default 80
-
-config ZMK_RGB_UNDERGLOW_HUE_START
-    default 160
-
-config ZMK_RGB_UNDERGLOW_EFF_START
-    default 3
 
 if USB
 
@@ -47,6 +34,7 @@ config USB_DEVICE_STACK
     default y
 
 endif # USB
+
 config ZMK_DISPLAY
     select LV_USE_CONT
     select LV_FONT_MONTSERRAT_26
@@ -90,10 +78,31 @@ menuconfig CUSTOM_WIDGET_LAYER_STATUS
 menuconfig CUSTOM_WIDGET_PERIPHERAL_STATUS
     bool "custom peripheral status widget"
 
-endif # SHIELD_SOMETHING_CORNISH_LEFT || SHIELD_SOMETHING_CORNISH_RIGHT
-if SHIELD_SOMETHING_CORNISH_LEFT || SHIELD_SOMETHING_CORNISH_RIGHT
+config CUSTOM_WIDGET_LAYER_STATUS_HIDE_HEADING
+	bool "Hide heading strip for layer widget and center widgets on 1/3rds"
+
+choice CUSTOM_WIDGET_LOGO_IMAGE
+	prompt "custom logo widget image"
+
+	config CUSTOM_WIDGET_LOGO_IMAGE_ZEN
+		bool "Corne-ish Zen"
+
+	config CUSTOM_WIDGET_LOGO_IMAGE_LPKB
+		bool "LPKB"
+
+	config CUSTOM_WIDGET_LOGO_IMAGE_ZMK
+		bool "ZMK"
+
+	config CUSTOM_WIDGET_LOGO_IMAGE_MIRYOKU
+		bool "Miryoku"
+
+endchoice
+
+endif # BOARD_CORNEISH_ZEN_LEFT || BOARD_CORNEISH_ZEN_RIGHT
+
+if BOARD_CORNEISH_ZEN_V1_LEFT || BOARD_CORNEISH_ZEN_V1_RIGHT
+
 config BQ274XX
     default y
 
-endif # SHIELD_SOMETHING_CORNISH_LEFT || SHIELD_SOMETHING_CORNISH_RIGHT
-
+endif # BOARD_CORNEISH_ZEN_V1_LEFT || BOARD_CORNEISH_ZEN_V1_RIGHT
